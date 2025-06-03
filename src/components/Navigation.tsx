@@ -103,7 +103,7 @@ const Navigation = () => {
               onClick={(e) => handleScrollToSection(e, "#")}
               className="text-lg font-medium text-white"
             >
-              John Doe
+              Katsura
             </a>
             <MobileNavToggle isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
           </MobileNavHeader>
