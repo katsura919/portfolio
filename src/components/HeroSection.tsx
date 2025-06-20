@@ -8,11 +8,28 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Boxes } from "@/components/ui/background-boxes";
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+import { ScrollColorBackground } from "./ui/scroll-color-background";
 import { Github, ArrowRight } from "lucide-react";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import SkillsSection from "./SkillsSection";
 import ProjectsSection from "./ProjectsSection";
 import ContactSection from "./ContactSection";
+// Import the color palettes
+import { 
+  vibrantGradients, 
+  neonCyberpunk, 
+  softPastels,
+  electricBlues,
+  sunsetVibes,
+  auroraBorealis 
+} from "@/lib/color-palettes";
+import {
+  subtleDark,
+  midnightBreeze,
+  smokeAndGlass,
+  darkOcean,
+  frostedGlass
+} from "@/lib/glass-palettes";
 
 const HeroSection = () => {
   const words = [
@@ -30,18 +47,28 @@ const HeroSection = () => {
       text: "Paul.",
       
     },
-  ];
-
+  ];  // Use the color palette of your choice here
+  // Options from color-palettes.ts: vibrantGradients, neonCyberpunk, softPastels, electricBlues, sunsetVibes, auroraBorealis
+  // Options from glass-palettes.ts (with glassmorphism): subtleDark, midnightBreeze, smokeAndGlass, darkOcean, frostedGlass
+  const backgroundSections = darkOcean;
   return (
-    <section className="relative w-full min-h-screen overflow-auto">      {/* Animated Background */}      <div className="fixed inset-0 z-0 pointer-events-auto">
+    <section className="relative w-full min-h-screen overflow-auto">      {/* Color-changing background based on scroll with crossfade effect */}      <ScrollColorBackground 
+        sections={backgroundSections} 
+        showIndicator={true} 
+        transitionDuration={1500} // 1.5 second fade duration for smoother transitions
+      />
+        {/* Subtle animated background with glassmorphism effects */}      <div className="fixed inset-0 z-0 pointer-events-auto opacity-60">
         <BackgroundBeamsWithCollision className="w-full h-screen">
           <div className="absolute inset-0" />
         </BackgroundBeamsWithCollision>
       </div>
       
+      {/* Glass overlay for better text readability */}
+      <div className="fixed inset-0 bg-black/5 backdrop-blur-[2px] z-0"></div>
+      
       {/* Content Container - All sections */}
       <div className="relative z-10 pointer-events-none">        {/* Hero Content */}
-        <div className="flex flex-col items-center justify-center min-h-screen px-4 pointer-events-auto">
+        <div id="hero" className="flex flex-col items-center justify-center min-h-screen px-4 pointer-events-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
