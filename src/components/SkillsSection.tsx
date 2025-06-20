@@ -55,7 +55,7 @@ const skills = [
 
 const SkillsSection = () => {
   return (
-    <section className="w-full py-20 bg-gradient-to-b from-gray-900 via-gray-900 to-gray-900" id="skills">
+    <section className="w-full py-20" id="skills">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
