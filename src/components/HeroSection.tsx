@@ -52,12 +52,14 @@ const HeroSection = () => {
   // Options from glass-palettes.ts (with glassmorphism): subtleDark, midnightBreeze, smokeAndGlass, darkOcean, frostedGlass
   const backgroundSections = darkOcean;
   return (
-    <section className="relative w-full min-h-screen overflow-auto">      {/* Color-changing background based on scroll with crossfade effect */}      <ScrollColorBackground 
+    <section className="relative w-full min-h-screen overflow-auto">      {/* Color-changing background based on scroll with crossfade effect */}      
+      <ScrollColorBackground 
         sections={backgroundSections} 
         showIndicator={true} 
         transitionDuration={1500} // 1.5 second fade duration for smoother transitions
       />
-        {/* Subtle animated background with glassmorphism effects */}      <div className="fixed inset-0 z-0 pointer-events-auto opacity-60">
+        {/* Subtle animated background with glassmorphism effects */}      
+      <div className="fixed inset-0 z-0 pointer-events-auto opacity-30">
         <BackgroundBeamsWithCollision className="w-full h-screen">
           <div className="absolute inset-0" />
         </BackgroundBeamsWithCollision>
