@@ -67,7 +67,7 @@ const SkillsSection = () => {
           <span className="px-4 py-2 bg-gray-800/60 rounded-full border border-gray-700 text-gray-300 text-sm backdrop-blur-xl">
             My Expertise
           </span>
-          <h2 className="mt-6 text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+          <h2 className="mt-6 py-3 text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
             Skills & Technologies
           </h2>
           <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-lg">
