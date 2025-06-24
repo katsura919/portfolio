@@ -53,20 +53,15 @@ const HeroSection = () => {
   const backgroundSections = darkOcean;
   return (
     <section className="relative w-full min-h-screen overflow-auto">      {/* Color-changing background based on scroll with crossfade effect */}      
-      <ScrollColorBackground 
-        sections={backgroundSections} 
-        showIndicator={true} 
-        transitionDuration={1500} // 1.5 second fade duration for smoother transitions
-      />
+
         {/* Subtle animated background with glassmorphism effects */}      
-      <div className="fixed inset-0 z-0 pointer-events-auto opacity-30">
+      <div className="fixed inset-0 z-0 pointer-events-auto ">
         <BackgroundBeamsWithCollision className="w-full h-screen">
           <div className="absolute inset-0" />
         </BackgroundBeamsWithCollision>
       </div>
       
-      {/* Glass overlay for better text readability */}
-      <div className="fixed inset-0 bg-black/5 backdrop-blur-[2px] z-0"></div>
+
       
       {/* Content Container - All sections */}
       <div className="relative z-10 pointer-events-none">        {/* Hero Content */}
