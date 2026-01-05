@@ -4,9 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 
-const ContactSection = () => {  return (
+const ContactSection = () => {
+  return (
     <section className="w-full py-20" id="contact">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 pointer-events-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +60,7 @@ const ContactSection = () => {  return (
               <span>LinkedIn</span>
             </a>
           </div>
-          
+
           <div className="mt-12 text-center">
             <p className="text-gray-400">
               © {new Date().getFullYear()} Katsura. All rights reserved.
@@ -71,4 +72,4 @@ const ContactSection = () => {  return (
   );
 };
 
-export default ContactSection; 
+export default ContactSection;

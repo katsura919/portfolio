@@ -7,24 +7,22 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Github, ExternalLink } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const projects = [
   {
     name: "Yomikata",
-    description: "A manga reader website built using MangaDex API. This project is a work in progress and I am currently working on adding more features and improving the UI/UX.",
-    image: "/project1.png", 
+    description:
+      "A manga reader website built using MangaDex API. This project is a work in progress and I am currently working on adding more features and improving the UI/UX.",
+    image: "/project1.png",
     github: "https://github.com/yourusername/project-one",
     demo: "https://project-one.demo",
     tags: ["Next.js", "TypeScript", "TailwindCSS"],
   },
   {
     name: "TaskVenture Landing Page",
-    description: "A landing page for a task management app built using React and TailwindCSS.",
+    description:
+      "A landing page for a task management app built using React and TailwindCSS.",
     image: "/project2.png",
     github: "https://github.com/yourusername/project-two",
     demo: "https://project-two.demo",
@@ -32,27 +30,28 @@ const projects = [
   },
   {
     name: "Pokemania: Pokemon Battle Outcome Predictor",
-    description: "A pokemon battle outcome predictor built using NextJS, Django and Machine Learning. This project is a work in progress and I am currently working on adding more features and improving the UI/UX.",
-    image: "/project3.png", 
+    description:
+      "A pokemon battle outcome predictor built using NextJS, Django and Machine Learning. This project is a work in progress and I am currently working on adding more features and improving the UI/UX.",
+    image: "/project3.png",
     github: "https://github.com/yourusername/project-two",
     demo: "https://project-two.demo",
     tags: ["React", "Node.js", "MongoDB"],
   },
   {
     name: "Enquiro: Multi-Tenant AI Chatbot",
-    description: "A Saas platform for business to use AI chatbot to answer customer queries and manage escalations. ",
-    image: "/project4.png", 
+    description:
+      "A Saas platform for business to use AI chatbot to answer customer queries and manage escalations. ",
+    image: "/project4.png",
     github: "https://github.com/yourusername/project-two",
     demo: "https://project-two.demo",
     tags: ["React", "Node.js", "MongoDB"],
   },
-
 ];
 
 const ProjectsSection = () => {
   return (
     <section className="w-full py-20" id="projects">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 pointer-events-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +66,8 @@ const ProjectsSection = () => {
             Featured Projects
           </h2>
           <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-lg">
-            A showcase of my best work, side projects, and open source contributions
+            A showcase of my best work, side projects, and open source
+            contributions
           </p>
         </motion.div>
 

@@ -5,14 +5,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Code2,
-  Database,
-  Layout,
-  Server,
-  Terminal,
-  Box,
-} from "lucide-react";
+import { Code2, Database, Layout, Server, Terminal, Box } from "lucide-react";
 
 const skills = [
   {
@@ -56,7 +49,7 @@ const skills = [
 const SkillsSection = () => {
   return (
     <section className="w-full py-20" id="skills">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 pointer-events-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +64,8 @@ const SkillsSection = () => {
             Skills & Technologies
           </h2>
           <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-lg">
-            A comprehensive toolkit that enables me to build complete, scalable applications
+            A comprehensive toolkit that enables me to build complete, scalable
+            applications
           </p>
         </motion.div>
 
@@ -90,14 +84,16 @@ const SkillsSection = () => {
               transition={{
                 duration: 0.5,
                 delay: index * 0.1,
-                ease: "easeOut"
+                ease: "easeOut",
               }}
               viewport={{ once: true, margin: "-100px" }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="group relative p-6 bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-800/50 hover:border-gray-700/50 hover:bg-gray-800/40 transition-all duration-300"
+              className="group relative p-6 bg-gray-900/40 backdrop-blur-md rounded-xl border border-white/10 hover:border-white/20 hover:bg-gray-800/60 transition-all duration-300 hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.1)]"
             >
               <div className="flex items-center gap-4 mb-3">
-                <div className={`p-2.5 rounded-lg bg-gray-900/50 ring-1 ring-white/10 ${skill.color} transition-colors duration-300`}>
+                <div
+                  className={`p-2.5 rounded-lg bg-gray-800/50 ring-1 ring-white/5 group-hover:ring-white/20 ${skill.color} transition-all duration-300`}
+                >
                   <skill.icon className="w-5 h-5" />
                 </div>
                 <h3 className="font-semibold text-white group-hover:text-white/90 transition-colors">
