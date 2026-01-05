@@ -70,7 +70,6 @@ const HeroSection = () => {
               >
                 <a href="#projects" className="flex items-center gap-2">
                   View My Work
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
                 </a>
               </Button>
               <Button

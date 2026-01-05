@@ -14,19 +14,19 @@ export default function Home() {
       </div>
       <ScrollArea className="h-screen w-full">
         <div className="relative z-10 w-full pointer-events-none">
-          <div>
+          <div className="pointer-events-auto">
             <HeroSection />
           </div>
-          <div>
+          <div className="pointer-events-auto">
             <TechMarquee />
           </div>
-          <div>
+          <div className="pointer-events-auto">
             <SkillsSection />
           </div>
-          <div>
+          <div className="pointer-events-auto">
             <ProjectsSection />
           </div>
-          <div>
+          <div className="pointer-events-auto">
             <ContactSection />
           </div>
         </div>
