@@ -1,36 +1,32 @@
 import HeroSection from "../components/HeroSection";
 import TechMarquee from "../components/TechMarquee";
-import { BackgroundRippleEffect } from "../components/ui/background-ripple-effect";
-import { ScrollArea } from "../components/ui/scroll-area";
 import SkillsSection from "../components/SkillsSection";
 import ProjectsSection from "../components/ProjectsSection";
 import ContactSection from "../components/ContactSection";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center w-full relative min-h-screen">
-      <div className="fixed inset-0 z-0">
-        <BackgroundRippleEffect />
+    <main className="min-h-screen w-full bg-black relative">
+      {/* Dark White Dotted Grid Background */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background: "#000000",
+          backgroundImage: `
+            radial-gradient(circle, rgba(255, 255, 255, 0.2) 1.5px, transparent 1.5px)
+          `,
+          backgroundSize: "30px 30px",
+          backgroundPosition: "0 0",
+        }}
+      />
+      {/* Your Content/Components */}
+      <div className="relative z-10 w-full">
+        <HeroSection />
+        <TechMarquee />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
       </div>
-      <ScrollArea className="h-screen w-full">
-        <div className="relative z-10 w-full pointer-events-none">
-          <div className="pointer-events-auto">
-            <HeroSection />
-          </div>
-          <div className="pointer-events-auto">
-            <TechMarquee />
-          </div>
-          <div className="pointer-events-auto">
-            <SkillsSection />
-          </div>
-          <div className="pointer-events-auto">
-            <ProjectsSection />
-          </div>
-          <div className="pointer-events-auto">
-            <ContactSection />
-          </div>
-        </div>
-      </ScrollArea>
     </main>
   );
 }

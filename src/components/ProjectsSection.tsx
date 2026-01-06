@@ -50,8 +50,8 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section className="w-full py-20" id="projects">
-      <div className="max-w-7xl mx-auto px-4 pointer-events-auto">
+    <section className="w-full py-12 sm:py-16 md:py-20" id="projects">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pointer-events-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +76,7 @@ const ProjectsSection = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto"
         >
           {projects.map((project, index) => (
             <motion.div

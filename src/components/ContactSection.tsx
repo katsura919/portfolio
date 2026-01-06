@@ -6,8 +6,8 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section className="w-full py-20" id="contact">
-      <div className="max-w-7xl mx-auto px-4 pointer-events-auto">
+    <section className="w-full py-12 sm:py-16 md:py-20" id="contact">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pointer-events-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center gap-8 mt-12"
         >
-          <div className="flex items-center justify-center gap-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
             <a
               href="mailto:katsura919@gmail.com"
               className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors p-4 rounded-full hover:bg-gray-800/50"

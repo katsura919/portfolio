@@ -3,8 +3,12 @@ import React, { useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const BackgroundRippleEffect = ({
+  rows = 8,
+  cols = 27,
   cellSize = 56,
 }: {
+  rows?: number;
+  cols?: number;
   cellSize?: number;
 }) => {
   const [clickedCell, setClickedCell] = useState<{
@@ -12,37 +16,24 @@ export const BackgroundRippleEffect = ({
     col: number;
   } | null>(null);
   const [rippleKey, setRippleKey] = useState(0);
-  const [matrix, setMatrix] = useState({ rows: 5, cols: 5 });
   const ref = useRef<any>(null);
-
-  React.useEffect(() => {
-    const updateMatrix = () => {
-      const rows = Math.ceil(window.innerHeight / cellSize);
-      const cols = Math.ceil(window.innerWidth / cellSize);
-      setMatrix({ rows, cols });
-    };
-
-    updateMatrix();
-    window.addEventListener("resize", updateMatrix);
-    return () => window.removeEventListener("resize", updateMatrix);
-  }, [cellSize]);
 
   return (
     <div
       ref={ref}
       className={cn(
         "absolute inset-0 h-full w-full",
-        "[--cell-border-color:var(--border)] [--cell-fill-color:var(--secondary)] [--cell-shadow-color:var(--muted-foreground)]",
-        "dark:[--cell-border-color:var(--border)] dark:[--cell-fill-color:var(--secondary)] dark:[--cell-shadow-color:var(--muted)]"
+        "[--cell-border-color:var(--color-neutral-300)] [--cell-fill-color:var(--color-neutral-100)] [--cell-shadow-color:var(--color-neutral-500)]",
+        "dark:[--cell-border-color:var(--color-neutral-700)] dark:[--cell-fill-color:var(--color-neutral-900)] dark:[--cell-shadow-color:var(--color-neutral-800)]",
       )}
     >
-      <div className="relative h-full w-full overflow-hidden [mask-image:linear-gradient(to_bottom,white_60%,transparent_100%)]">
+      <div className="relative h-auto w-auto overflow-hidden">
         <div className="pointer-events-none absolute inset-0 z-[2] h-full w-full overflow-hidden" />
         <DivGrid
           key={`base-${rippleKey}`}
-          className="mask-radial-from-20% mask-radial-at-top opacity-60"
-          rows={matrix.rows}
-          cols={matrix.cols}
+          className="mask-radial-from-20% mask-radial-at-top opacity-600"
+          rows={rows}
+          cols={cols}
           cellSize={cellSize}
           borderColor="var(--cell-border-color)"
           fillColor="var(--cell-fill-color)"
@@ -88,7 +79,7 @@ const DivGrid = ({
 }: DivGridProps) => {
   const cells = useMemo(
     () => Array.from({ length: rows * cols }, (_, idx) => idx),
-    [rows, cols]
+    [rows, cols],
   );
 
   const gridStyle: React.CSSProperties = {
@@ -124,7 +115,7 @@ const DivGrid = ({
             className={cn(
               "cell relative border-[0.5px] opacity-40 transition-opacity duration-150 will-change-transform hover:opacity-80 dark:shadow-[0px_0px_40px_1px_var(--cell-shadow-color)_inset]",
               clickedCell && "animate-cell-ripple [animation-fill-mode:none]",
-              !interactive && "pointer-events-none"
+              !interactive && "pointer-events-none",
             )}
             style={{
               backgroundColor: fillColor,
