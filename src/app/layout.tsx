@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   verification: {
-    google: "H2MZOp8GTipHVn3XKvDrdnHd3gbh1I0LsMskzJ2GHOE",
+    google: "MS81FUbndjoCpBqbvqqBN3pVsnN6Lg5fft04",
   },
   title: "Jan Paul | Full Stack Developer",
   description: "Portfolio website showcasing my work as a Full Stack Developer",
