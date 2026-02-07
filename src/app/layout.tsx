@@ -22,8 +22,8 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=5"
+          name="google-site-verification"
+          content="H2MZOp8GTipHVn3XKvDrdnHd3gbh1I0LsMskzJ2GHOE"
         />
       </head>
       <body className={inter.className}>
