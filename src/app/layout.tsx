@@ -6,6 +6,9 @@ import Navigation from "@/components/Navigation";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "H2MZOp8GTipHVn3XKvDrdnHd3gbh1I0LsMskzJ2GHOE",
+  },
   title: "Jan Paul | Full Stack Developer",
   description: "Portfolio website showcasing my work as a Full Stack Developer",
 };
