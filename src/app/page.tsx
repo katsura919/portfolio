@@ -7,7 +7,6 @@ import ContactSection from "../components/ContactSection";
 export default function Home() {
   return (
     <main className="min-h-screen w-full bg-black relative">
-      {/* Dark White Dotted Grid Background */}
       <div
         className="absolute inset-0 z-0"
         style={{
